@@ -14,8 +14,8 @@ jobs:
 
       - name: Update versions
         run: |
-          sed -i "s/pkgver=.*$/pkgver=$(cd com.sandpolis.agent.kilo && git describe --tags | tr -d 'v')/" PKGBUILD
-          sed -i "s/pkgver =.*$/pkgver = $(cd com.sandpolis.agent.kilo && git describe --tags | tr -d 'v')/" .SRCINFO
+          sed -i "s/pkgver=.*$/pkgver=$(cd sandpolis/com.sandpolis.agent.kilo && git describe --tags | tr -d 'v')/" PKGBUILD
+          sed -i "s/pkgver =.*$/pkgver = $(cd com.sandpolis/sandpolis.agent.kilo && git describe --tags | tr -d 'v')/" .SRCINFO
 
       - name: Commit changes
         uses: EndBug/add-and-commit@v7
