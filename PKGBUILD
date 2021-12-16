@@ -2,7 +2,7 @@
 _module=com.sandpolis.agent.vanilla
 pkgdesc='Sandpolis agent'
 pkgname=sandpolis-agent
-pkgver=7.0.0
+pkgver=
 pkgrel=1
 url='https://github.com/sandpolis/sandpolis'
 install=sandpolis-agent.install
