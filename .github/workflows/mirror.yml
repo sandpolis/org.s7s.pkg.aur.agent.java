@@ -9,16 +9,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: actions/checkout@v2
-        with:
-          repository: 'sandpolis/com.sandpolis.agent.kilo'
-          path: 'target'
-          fetch-depth: 0
 
       - name: Update versions
         run: |
-          sed -i "s/pkgver=.*$/pkgver=$(cd ${GITHUB_WORKSPACE}/target && git describe --tags | tr -d 'v')/" PKGBUILD
-          sed -i "s/pkgver =.*$/pkgver = $(cd ${GITHUB_WORKSPACE}/target && git describe --tags | tr -d 'v')/" .SRCINFO
+          if version=$(curl -s https://api.github.com/repos/sandpolis/com.sandpolis.agent.kilo/tags | jq '.[0] | .name' | tr -d 'v"'); then
+            sed -i "s/pkgver=.*$/pkgver=${version}/" PKGBUILD
+            sed -i "s/pkgver =.*$/pkgver = ${version}/" .SRCINFO
+          fi
 
       - name: Commit changes
         uses: EndBug/add-and-commit@v7
