@@ -33,7 +33,7 @@ jobs:
       - uses: pixta-dev/repository-mirroring-action@v1
         with:
           target_repo_url:
-            aur.archlinux.org/sandpolis-agent.git
+            ssh://aur.archlinux.org/sandpolis-agent.git
           ssh_username:
             aur
           ssh_private_key:
