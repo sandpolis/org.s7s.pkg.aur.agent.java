@@ -1,6 +1,6 @@
 pkgbase = sandpolis-agent
 	pkgdesc = Sandpolis agent
-	pkgver = 0.2.0-2-g3610739
+	pkgver = 0.2.0
 	pkgrel = 1
 	url = https://github.com/sandpolis/sandpolis
 	install = sandpolis-agent.install
