@@ -3,7 +3,6 @@ pkgbase = sandpolis-agent
 	pkgver = 0.2.0
 	pkgrel = 1
 	url = https://github.com/sandpolis/sandpolis
-	install = sandpolis-agent.install
 	arch = any
 	license = Mozilla Public License Version 2.0
 	makedepends = java-environment>=15
@@ -17,4 +16,3 @@ pkgbase = sandpolis-agent
 	sha512sums = SKIP
 
 pkgname = sandpolis-agent
-

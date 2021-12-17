@@ -5,7 +5,6 @@ pkgname=sandpolis-agent
 pkgver=0.2.0
 pkgrel=1
 url='https://github.com/sandpolis/sandpolis'
-install=sandpolis-agent.install
 arch=('any')
 license=('Mozilla Public License Version 2.0')
 makedepends=('java-environment>=15' 'git')
@@ -15,17 +14,6 @@ conflicts=('sandpolis-agent')
 source=("git+https://github.com/sandpolis/sandpolis.git#commit=a5de3be94f3d9a4b12344a7cebe9c06601900060" \
 	"git+https://github.com/sandpolis/${_module}.git#commit=8fe5cd3734f82176644ea0ff1ae221be2fdbefe3")
 sha512sums=('SKIP' 'SKIP')
-
-prepare() {
-
-	# Transplant submodule instead of initializing it
-	cp -r "${srcdir}/${_module}" "${srcdir}/sandpolis"
-}
-
-pkgver() {
-	cd "${srcdir}/sandpolis/${_module}"
-	git describe --tags | tr -d 'v'
-}
 
 build() {
 	cd "${srcdir}/sandpolis"
